@@ -1,7 +1,13 @@
 import React from "react";
+import TodoItem from "./TodoItem";
 
 const App = (props) => {
-  return <div>Make me into a todo list!</div>
-}
+  return (
+    <div>
+      <TodoItem text="TODO1"></TodoItem>
+      <TodoItem text="hello, world!"></TodoItem>
+    </div>
+  );
+};
 
 export default App;

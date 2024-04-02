@@ -1,0 +1,27 @@
+.todo-item {
+  display: flex;
+  justify-content: flex-start;
+
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.dot {
+  margin-left: 1%;
+  align-self: center;
+
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.button {
+  margin-left: 1%;
+  align-self: center;
+}
+
+.text {
+  align-self: center;
+
+  font-size: large;
+  font-weight: 500;
+}
