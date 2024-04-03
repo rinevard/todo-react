@@ -1,3 +1,6 @@
+# This repository is for self-learning, please visit https://github.com/weblab-workshops/todo-react to view the original author's code.
+
+
 # todo-react
 
 Get more familiar with react by making a todo list!
