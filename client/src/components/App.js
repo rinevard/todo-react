@@ -7,12 +7,14 @@ const App = (props) => {
 
   // add a new todoItem with text 'itemText'
   const handleAddTodoItem = (itemText) => {
-    setTodoItems([...todoItems, { txt: itemText, isFinished: false }]);
+    // 假设使用当前时间戳作为每个待办项的唯一ID
+    const newItem = { id: Date.now(), txt: itemText, isFinished: false };
+    setTodoItems([...todoItems, newItem]);
   };
 
-  // delete the todoItem at index 'idxToRemove'
-  const handleDeleteTodoItem = (idxToRemove) => {
-    setTodoItems(todoItems.filter((_, idx) => idx !== idxToRemove));
+  // delete the todoItem at index 'idToRemove'
+  const handleDeleteTodoItem = (idToRemove) => {
+    setTodoItems(todoItems.filter((item) => item.id !== idToRemove));
   };
 
   return (

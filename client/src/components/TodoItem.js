@@ -30,7 +30,7 @@ const TodoItem = ({ deleteFunc, todoItemText, isFinished }) => {
       <div className="dot">·</div>
       <Checkbox
         checked={itemIsFinished}
-        onClick={handleChckboxClick}
+        onChange={handleChckboxClick}
       ></Checkbox>
       <span className={"text " + (itemIsFinished ? "finished-text" : "")}>
         {todoItemText}
