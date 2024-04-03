@@ -4,30 +4,36 @@ import { Checkbox } from "@mui/material";
 
 /**
  *
- * deleteFunc 一个删除该item的函数
- * todoItemContent 该item显示的文字
+ * deleteFunc 一个删除该item的函数, 通过deleteFunc()来调用
+ * todoItemText 该item显示的文字
+ * isFinished 该item是否完成
  */
-const TodoItem = ({ deleteFunc, todoItemContent }) => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  // defensive
+const TodoItem = ({ deleteFunc, todoItemText, isFinished }) => {
+  // fail fast
   if (deleteFunc === undefined) {
-    console.error("Delete function doesn't exist!");
+    console.error("'deleteFunc' is undefined!");
   }
-  if (todoItemContent === undefined) {
-    console.error("Text doesn't exist!");
+  if (todoItemText === undefined) {
+    console.error("'todoItemText' is undefined!");
+  }
+  if (isFinished === undefined) {
+    console.error("'isFinished' is undefined!");
   }
 
+  const [itemIsFinished, setItemIsFinished] = useState(isFinished);
   const handleChckboxClick = () => {
-    setIsClicked(!isClicked);
+    setItemIsFinished(!itemIsFinished);
   };
 
   return (
     <div className={"todo-item"}>
       <div className="dot">·</div>
-      <Checkbox checked={isClicked} onClick={handleChckboxClick}></Checkbox>
-      <span className={"text " + (isClicked ? "finished-text" : "")}>
-        {todoItemContent}
+      <Checkbox
+        checked={itemIsFinished}
+        onClick={handleChckboxClick}
+      ></Checkbox>
+      <span className={"text " + (itemIsFinished ? "finished-text" : "")}>
+        {todoItemText}
       </span>
       <button onClick={deleteFunc} className="button">
         X

@@ -3,22 +3,22 @@ import TodoItemList from "./TodoItemList";
 import AddItemForm from "./AddItemForm";
 
 const App = (props) => {
-  const [todoItemtexts, setTodoItemtexts] = useState([]);
+  const [todoItems, setTodoItems] = useState([]);
 
-  // add a new todoItem with text 'txt'
-  const handleAddTodoItem = (txt) => {
-    setTodoItemtexts([...todoItemtexts, txt]);
+  // add a new todoItem with text 'itemText'
+  const handleAddTodoItem = (itemText) => {
+    setTodoItems([...todoItems, { txt: itemText, isFinished: false }]);
   };
 
   // delete the todoItem at index 'idxToRemove'
   const handleDeleteTodoItem = (idxToRemove) => {
-    setTodoItemtexts(todoItemtexts.filter((_, idx) => idx !== idxToRemove));
+    setTodoItems(todoItems.filter((_, idx) => idx !== idxToRemove));
   };
 
   return (
     <div>
       <TodoItemList
-        todoTexts={todoItemtexts}
+        todoItemContents={todoItems}
         onDelete={handleDeleteTodoItem}
       ></TodoItemList>
       <AddItemForm onAdd={handleAddTodoItem}></AddItemForm>

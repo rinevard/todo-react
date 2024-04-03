@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 /**
  *
- * @param {onAdd(txt: String)} 创建一个以'txt'为内容的todoItem
+ * @onAdd 一个回调函数, onAdd(txt)创建一个以'txt'为内容的todoItem
  * @returns
  */
 const AddItemForm = ({ onAdd }) => {
