@@ -6,6 +6,11 @@
   margin-bottom: 1%;
 }
 
+.finished-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .dot {
   margin-left: 1%;
   align-self: center;
